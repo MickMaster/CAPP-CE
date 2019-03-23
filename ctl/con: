@@ -1,0 +1,79 @@
+BASEDIR = .
+[36;1m 
+    ______     __                     
+   /_  __/__  / /___  _______  _______
+    / / / _ \/ / __ \/ ___/ / / / ___/
+   / / /  __/ / /_/ (__  ) /_/ (__  ) 
+  /_/  \___/_/\____/____/\__, /____/  
+                        /____/  3.0.0 CLI-013[0m
+Enter ? for help
+[32mtelosys>[0mh .
+Home set ('/Users/md/Dropbox/Xojo/CAPP/ctl')
+[32mtelosys#(pip.dbrep)[xojo]>[0minit
+Project initialization 
+Project folder : '/Users/md/Dropbox/Xojo/CAPP/ctl' 
+
+. folder 'TelosysTools' exists (not created)
+. folder 'TelosysTools/downloads' exists (not created)
+. folder 'TelosysTools/lib' exists (not created)
+. folder 'TelosysTools/templates' exists (not created)
+. file 'databases.dbcfg' already exists (not created) 
+. file 'telosys-tools.cfg' already exists (not created) 
+
+[32mtelosys#(pip.dbrep)[xojo]>[0mndbm
+WARNING : 
+  You're about to create a new model from a database
+  This operation can take a lot of time (especially for Oracle databases)
+  The model file 'pip.dbrep' already exists.
+  The existing file will be overridden !
+Do you really want to launch the model creation ?  [y/n] ? y
+
+Generating the new model...
+[INFO] Creating new db-model from database 1
+ Getting database metadata
+ Getting tables metadata
+ 4 table(s) found
+ Processing table 'dummy' (1 / 4)
+  'dummy' : getting columns metadata
+  'dummy' : getting PK metadata
+  'dummy' : getting FK metadata for table
+  'dummy' : finding auto-incremented columns
+ Processing table 'hours' (2 / 4)
+  'hours' : getting columns metadata
+  'hours' : getting PK metadata
+  'hours' : getting FK metadata for table
+  'hours' : finding auto-incremented columns
+ Processing table 'names' (3 / 4)
+  'names' : getting columns metadata
+  'names' : getting PK metadata
+  'names' : getting FK metadata for table
+  'names' : finding auto-incremented columns
+ Processing table 'projects' (4 / 4)
+  'projects' : getting columns metadata
+  'projects' : getting PK metadata
+  'projects' : getting FK metadata for table
+  'projects' : finding auto-incremented columns
+ End of metadata processing : 4 table(s) processed.
+[INFO] Saving model in file /Users/md/Dropbox/Xojo/CAPP/ctl/TelosysTools/pip.dbrep
+[INFO] Repository saved.
+New model created.
+[32mtelosys#(pip.dbrep)[xojo]>[0mm pip
+Current model is now 'pip.dbrep'
+[32mtelosys#(pip.dbrep)[xojo]>[0mb XOJO
+0 bundles found!
+[32mtelosys#(pip.dbrep)[xojo]>[0menv
+ENVIRONMENT : 
+. Operating System name : Mac OS X
+. Operating System type : Mac-OS
+. Java version          : 11+28
+. Editor command        : open -e $FILE
+. '.jar' file           : /Users/md/Dropbox/Xojo/CAPP/ctl/telosys-cli-3.0.0-013.jar
+. Current directory     : /Users/md/Dropbox/Xojo/CAPP/ctl
+. Home directory        : /Users/md/Dropbox/Xojo/CAPP/ctl
+. Current GitHub store  : telosys-templates-v3
+. Current model         : pip.dbrep
+. Current bundle        : xojo
+
+[32mtelosys#(pip.dbrep)[xojo]>[0m
+[32mtelosys#(pip.dbrep)[xojo]>[0m
+[32mtelosys#(pip.dbrep)[xojo]>[0mERROR : Unexpected exception null

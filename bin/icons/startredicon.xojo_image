@@ -1,0 +1,40 @@
+#tag MultiImage
+Image startredicon
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAFYAAAAAAFYAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8Sc3RhcnRyZWRpY29uNTAucG5nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAABWljb25zAAACADAvOlByb2c6Q0FQUDpDQVBQLUNFOmJpbjppY29uczpzdGFydHJlZGljb241MC5wbmcADgAmABIAcwB0AGEAcgB0AHIAZQBkAGkAYwBvAG4ANQAwAC4AcABuAGcADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgAuUHJvZy9DQVBQL0NBUFAtQ0UvYmluL2ljb25zL3N0YXJ0cmVkaWNvbjUwLnBuZwATAAEvAP//AAAAAAAAAAA=
+		FullPath = /Prog/CAPP/CAPP-CE/bin/icons/startredicon50.png
+		PartialPath = icons\startredicon50.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 50.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 50.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 50.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 50.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 50.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 50.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

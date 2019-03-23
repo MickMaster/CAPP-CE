@@ -1,0 +1,6 @@
+# Be careful about the end of line characters for Unix shell
+# Edit with Notepadd++ ( Edit / EOL conversion : "Unix/OSX format" )
+BASEDIR=$(dirname "$0")
+echo BASEDIR = $BASEDIR
+cd $BASEDIR
+java -jar $BASEDIR/telosys-cli-3.0.0-013.jar $*

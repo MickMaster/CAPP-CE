@@ -1,0 +1,40 @@
+#tag MultiImage
+Image structureicon
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAFeAAAAAAFeAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8Tc3RydWN0dXJlaWNvbjUwLnBuZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAABWljb25zAAACADEvOlByb2c6Q0FQUDpDQVBQLUNFOmJpbjppY29uczpzdHJ1Y3R1cmVpY29uNTAucG5nAAAOACgAEwBzAHQAcgB1AGMAdAB1AHIAZQBpAGMAbwBuADUAMAAuAHAAbgBnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAL1Byb2cvQ0FQUC9DQVBQLUNFL2Jpbi9pY29ucy9zdHJ1Y3R1cmVpY29uNTAucG5nAAATAAEvAP//AAAAAAAAAAA=
+		FullPath = /Prog/CAPP/CAPP-CE/bin/icons/structureicon50.png
+		PartialPath = icons\structureicon50.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 50.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 50.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 50.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 50.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 50.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 50.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

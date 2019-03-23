@@ -1,0 +1,47 @@
+<!-- ============================================ -->
+<!--        TELOSYS DATABASES CONFIGURATION       -->
+<!-- ============================================ -->
+<!--
+"databases" tag Attributes :
+. maxId       : maximum database id (0 To 100, default = 10)
+. defaultId   : default database To use when no ID Is specified ( 0 To maxId ), default : 0
+"db" tag Attributes :
+. id       : the database id ( from 0 To maxId )
+. name     : the symbolic name ( anything )
+. driver   : the JDBC driver Class name
+. url      : the JDBC URL For connection
+. typeName : the database type name ( eg "DERBY", "H2", "MYSQL", "ORACLE", etc )
+. dialect  : the JPA dialect (usefull only For JPA) 
+. isolationLevel : JDBC values ( see Java Constants In "java.sql.Connection" )
+. poolSize       : the initial size Of the pool For this database 
+"metadata" tag Attributes :
+. catalog            : the catalog where To search the metadata ( "!" means "null" ) 
+. schema             : the schema  where To search the metadata ( "!" means "null" ) 
+. table-name-pattern : the pattern used As table name filter ( ex : "%", "A%", ... ) 
+. table-types        : the types To retrieve, separated by blanks ( ex : "TABLE", "TABLE VIEW", ... ) 
+. table-name-exclude : the pattern used To exclude tables
+. table-name-include : the pattern used To include tables
+-->
+<databases defaultId="1" maxId="10">
+
+<!-- ============================================ -->
+<!--                    MYSQL                     -->
+<!-- ============================================ -->
+<!-- The JDBC Driver Is In "mysql-connector-java-x.x.x-Bin.jar" -->
+
+<db id = "1" 
+name     = "pip" 
+driver   = "com.mysql.jdbc.Driver" 
+url      = "jdbc:mysql://localhost:3306/pip" 
+typeName = "MYSQL"
+dialect  = "org.hibernate.dialect.MySQLDialect"
+isolationLevel = "TRANSACTION_REPEATABLE_READ"
+poolSize       = "3" >
+<Property name="user"      value="root" />
+<Property name="password"  value="7fybae" />
+<metadata catalog=""  schema=""  
+table-name-pattern="%" table-types="TABLE  VIEW  " 
+table-name-exclude=""  table-name-include=""  />
+</db>
+</databases>
+

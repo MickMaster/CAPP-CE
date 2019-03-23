@@ -1,0 +1,69 @@
+##---------------------------------------------------------
+## CAPP parameter file, included in each other template
+##---------------------------------------------------------
+#set ( $testparameter = "Parameters are online!") 
+#if ( $databases.hasDatabase($model.databaseId) )
+#set ( $database = $databases.getDatabase($model.databaseId) )
+#set ( $dbname = $database.name)
+#else
+#set ( $dbname = "" )
+#end
+##---------------------------------------------------------
+## Module definition for ALL modules
+##---------------------------------------------------------
+#set( $ControlPath = "" )
+#set( $Database = "" )
+#set( $DatabaseEditor = "" )
+#set( $Dbms = "" )
+#set( $Driver = "" )
+#set( $ExecutionApp = "" )
+#set( $InputPath = "" )
+#set( $Language = "" )
+#set( $OutputPath = "" )
+#set( $Password = "" )
+#set( $StartModule = "" )
+#set( $TemplateEditor = "" )
+#set( $TextEditor = "" )
+#set( $URL = "" )
+#set( $Url = "" )
+#set( $User = "" )
+#set( $VelocityPath = "" )
+#set( $XMLEditor = "" )
+##---------------------------------------------------------
+## Module-Structure related parameters
+##---------------------------------------------------------
+#set( $moduleids = [ "52", "54", "58", "59", "60", "55", "53", "51", "56", "" ] ) 
+#set( $modules = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "" ] ) 
+#set( $modulenames = [ "Copy", "CappTest", "Main", "Resources", "Globals", "Menu", "MainProject", "Tables", "Records", "" ] ) 
+#set( $moduleinputs = [ "", "*", "*", "*", "*", "*", "*", "*", "*", "" ] ) 
+#set( $moduleonces = [ "Resource", "Once", "Once", "Once", "Once", "Once", "Once", "Multiple", "Multiple", "" ] ) 
+#set( $moduleoutputs = [ "", "App.xojo_code", "#.xojo_window", "#.xojo_resources", "Globals.xojo_code", "MainMenuBar.xojo_menu", "#.xojo_project", "Table_*.xojo_window", "Record_*.xojo_window", "" ] ) 
+#set( $moduletpl1s = [ "", "code.vm", "main.vm", "resources.vm", "globals.vm", "menu.vm", "project.vm", "table.vm", "record.vm", "" ] ) 
+##---------------------------------------------------------
+## System related names and parameters
+##---------------------------------------------------------
+#set( $ControlPath = "/Prog/CAPP/CAPP-CE/ctl/TelosysTools/templates" )
+#set( $Database = "sakila" )
+#set( $DatabaseEditor = "/Applications/DBeaverEE.app" )
+#set( $Dbms = "MYSQL" )
+#set( $Driver = "com.mysql.jdbc.Driver" )
+#set( $ExecutionApp = "/Applications/Xojo\ 2018\ Release\ 4/Xojo.app" )
+#set( $InputPath = "/Prog/CAPP/CAPP-CE/in" )
+#set( $Language = "XOJO" )
+#set( $OutputPath = "../out" )
+#set( $Password = "capp" )
+#set( $SystemName = "CappTest" )
+#set( $StartModule = "CappTest" )
+#set( $TemplateEditor = "/Applications/Sublime\ Text.app" )
+#set( $TextEditor = "/Applications/Sublime\ Text.app" )
+#set( $URL = "localhost:3306" )
+#set( $Url = "localhost" )
+#set( $User = "capp" )
+#set( $VelocityPath = "/Prog/CAPP/CAPP-CE/ctl" )
+#set( $XMLEditor = "/Applications/oxygen/Oxygen\ XML\ Editor.app" )
+##---------------------------------------------------------
+## Module related names and parameters
+##---------------------------------------------------------
+##---------------------------------------------------------
+## CAPP End of Parameter Definition File
+##---------------------------------------------------------

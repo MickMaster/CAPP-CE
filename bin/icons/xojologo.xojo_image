@@ -1,0 +1,40 @@
+#tag MultiImage
+Image xojologo
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAFAAAAAAAFAAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8MeG9qb2xvZ28ucG5nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAABWljb25zAAACACovOlByb2c6Q0FQUDpDQVBQLUNFOmJpbjppY29uczp4b2pvbG9nby5wbmcADgAaAAwAeABvAGoAbwBsAG8AZwBvAC4AcABuAGcADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgAoUHJvZy9DQVBQL0NBUFAtQ0UvYmluL2ljb25zL3hvam9sb2dvLnBuZwATAAEvAP//AAAAAAAAAAA=
+		FullPath = /Prog/CAPP/CAPP-CE/bin/icons/xojologo.png
+		PartialPath = icons\xojologo.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 180.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 70.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 180.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 70.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 180.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 70.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

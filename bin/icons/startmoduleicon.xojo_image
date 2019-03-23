@@ -1,0 +1,40 @@
+#tag MultiImage
+Image startmoduleicon
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAFmAAAAAAFmAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8Vc3RhcnRtb2R1bGVpY29uNTAucG5nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAABWljb25zAAACADMvOlByb2c6Q0FQUDpDQVBQLUNFOmJpbjppY29uczpzdGFydG1vZHVsZWljb241MC5wbmcAAA4ALAAVAHMAdABhAHIAdABtAG8AZAB1AGwAZQBpAGMAbwBuADUAMAAuAHAAbgBnAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAMVByb2cvQ0FQUC9DQVBQLUNFL2Jpbi9pY29ucy9zdGFydG1vZHVsZWljb241MC5wbmcAABMAAS8A//8AAAAAAAAAAA==
+		FullPath = /Prog/CAPP/CAPP-CE/bin/icons/startmoduleicon50.png
+		PartialPath = icons\startmoduleicon50.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 50.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 50.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 50.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 50.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 50.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 50.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Telosys Database Repository --><root>
+    <tableList databaseId="1" databaseName="test" databaseProductName="MySQL" generation="2019-03-16 16:45:48">
+        <table catalog="test" databaseType="TABLE" javaBean="Hours" name="hours" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="HourID" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="hourid" javaType="java.lang.Integer" jdbcTypeCode="4" label="Hourid" notNull="true" selected="true"/>
+            <column dbComment="Test" dbDefaultValue="" dbName="NameID" dbNotNull="false" dbPosition="2" dbSize="10" dbTypeName="INT" inputType="number" javaName="nameid" javaType="java.lang.Integer" jdbcTypeCode="4" label="Nameid" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="ProjectID" dbNotNull="false" dbPosition="3" dbSize="10" dbTypeName="INT" inputType="number" javaName="projectid" javaType="java.lang.Integer" jdbcTypeCode="4" label="Projectid" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="Activity" dbNotNull="false" dbPosition="4" dbSize="65535" dbTypeName="TEXT" inputType="text" javaName="activity" javaType="java.lang.String" jdbcTypeCode="-1" label="Activity" longText="true" maxLength="65535" notNull="false" selected="true"/>
+            <column dbComment="Stunden (!)" dbDefaultValue="" dbName="Hours" dbNotNull="false" dbPosition="5" dbSize="22" dbTypeName="DOUBLE" inputType="number" javaName="hours" javaType="java.lang.Double" jdbcTypeCode="8" label="Hours" notNull="false" selected="true"/>
+            <fk name="fk_hours_names">
+                <fkcol colname="NameID" colref="NameID" deferrable="7" deleterule="3" sequence="1" tablename="hours" tableref="names" updaterule="3"/>
+            </fk>
+            <fk name="fk_hours_projects1">
+                <fkcol colname="ProjectID" colref="ProjectID" deferrable="7" deleterule="3" sequence="1" tablename="hours" tableref="projects" updaterule="3"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_hours_names" id="LINK_FK_fk_hours_names_O" inverseSideOf="" javaName="names" javaType="Names" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="hours" targetEntity="Names" targetTableName="names" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="NameID" nullable="true" referencedColumnName="NameID" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_hours_projects1" id="LINK_FK_fk_hours_projects1_O" inverseSideOf="" javaName="projects" javaType="Projects" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="hours" targetEntity="Projects" targetTableName="projects" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="ProjectID" nullable="true" referencedColumnName="ProjectID" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="test" databaseType="TABLE" javaBean="Names" name="names" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="NameID" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="nameid" javaType="java.lang.Integer" jdbcTypeCode="4" label="Nameid" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="Name" dbNotNull="false" dbPosition="2" dbSize="255" dbTypeName="TINYTEXT" inputType="text" javaName="name" javaType="java.lang.String" jdbcTypeCode="12" label="Name" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="Mail" dbNotNull="false" dbPosition="3" dbSize="255" dbTypeName="TINYTEXT" inputType="text" javaName="mail" javaType="java.lang.String" jdbcTypeCode="12" label="Mail" maxLength="255" notNull="false" selected="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_hours_names" id="LINK_FK_fk_hours_names_I" inverseSideOf="LINK_FK_fk_hours_names_O" javaName="listOfHours" javaType="java.util.List" joinTableName="" mappedBy="names" optional="" owningSide="false" sourceTableName="names" targetEntity="Hours" targetTableName="hours" used="true"/>
+        </table>
+        <table catalog="test" databaseType="TABLE" javaBean="NewTable" name="new_table" schema="">
+            <column dbComment="" dbDefaultValue="" dbName="idnew_table" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idnewTable" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idnew table" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="text" dbNotNull="false" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="text" javaType="java.lang.String" jdbcTypeCode="12" label="Text" maxLength="45" notNull="false" selected="true"/>
+        </table>
+        <table catalog="test" databaseType="TABLE" javaBean="Projects" name="projects" schema="">
+            <column dbAutoIncremented="true" dbComment="Projektkennzeichen" dbDefaultValue="" dbName="ProjectID" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="projectid" javaType="java.lang.Integer" jdbcTypeCode="4" label="Projectid" notNull="true" selected="true"/>
+            <column dbComment="$just=&quot;C&quot;;$height=&quot;100&quot;;" dbDefaultValue="" dbName="Project" dbNotNull="false" dbPosition="2" dbSize="65535" dbTypeName="TEXT" inputType="text" javaName="project" javaType="java.lang.String" jdbcTypeCode="-1" label="Project" longText="true" maxLength="65535" notNull="false" selected="true"/>
+            <column dbComment="$label=&quot;Stundensatz&quot;;$bgcol=&quot;&amp;cFFEEFF&quot;;" dbDefaultValue="" dbName="Rate" dbNotNull="false" dbPosition="3" dbSize="22" dbTypeName="DOUBLE" inputType="number" javaName="rate" javaType="java.lang.Double" jdbcTypeCode="8" label="Rate" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="ProjectName" dbNotNull="false" dbPosition="4" dbSize="100" dbTypeName="VARCHAR" inputType="text" javaName="projectname" javaType="java.lang.String" jdbcTypeCode="12" label="Projectname" maxLength="100" notNull="false" selected="true"/>
+            <column dateType="D" dbComment="$fgcol=&quot;&amp;c440000&quot;;" dbDefaultValue="" dbName="OrderDate" dbNotNull="false" dbPosition="5" dbSize="10" dbTypeName="DATE" inputType="date" javaName="orderdate" javaType="java.util.Date" jdbcTypeCode="91" label="Orderdate" notNull="false" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="StartTime" dbNotNull="false" dbPosition="6" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="starttime" javaType="java.util.Date" jdbcTypeCode="93" label="Starttime" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="YesNo" dbNotNull="false" dbPosition="7" dbSize="0" dbTypeName="BIT" inputType="checkbox" javaName="yesno" javaType="java.lang.Boolean" jdbcTypeCode="-7" label="Yesno" notNull="false" selected="true"/>
+            <column dbComment="$height=&quot;50&quot;;" dbDefaultValue="" dbName="SmallInteger" dbNotNull="false" dbPosition="8" dbSize="5" dbTypeName="SMALLINT" inputType="number" javaName="smallinteger" javaType="java.lang.Short" jdbcTypeCode="5" label="Smallinteger" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="SmallIntUnsigned" dbNotNull="false" dbPosition="9" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="smallintunsigned" javaType="java.lang.Short" jdbcTypeCode="5" label="Smallintunsigned" notNull="false" selected="true"/>
+            <column dbComment="$hide=&quot;true&quot;;" dbDefaultValue="" dbName="MediumInteger" dbNotNull="false" dbPosition="10" dbSize="7" dbTypeName="MEDIUMINT" inputType="number" javaName="mediuminteger" javaType="java.lang.Integer" jdbcTypeCode="4" label="Mediuminteger" notNull="false" selected="true"/>
+            <column dbComment="$just=&quot;C&quot;;" dbDefaultValue="" dbName="SimpleInt" dbNotNull="false" dbPosition="11" dbSize="10" dbTypeName="INT" inputType="number" javaName="simpleint" javaType="java.lang.Integer" jdbcTypeCode="4" label="Simpleint" notNull="false" selected="true"/>
+            <column dbComment="$skip=&quot;true&quot;;" dbDefaultValue="" dbName="CharX" dbNotNull="false" dbPosition="12" dbSize="5" dbTypeName="CHAR" inputType="text" javaName="charx" javaType="java.lang.String" jdbcTypeCode="1" label="Charx" maxLength="5" notNull="false" selected="true"/>
+            <column dateType="DT" dbComment="$width=&quot;100&quot;;" dbDefaultValue="" dbName="TimeStamp" dbNotNull="false" dbPosition="13" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="timestamp" javaType="java.util.Date" jdbcTypeCode="93" label="Timestamp" notNull="false" selected="true"/>
+            <column dbComment="$format=&quot;999999.99&quot;;" dbDefaultValue="" dbName="DecimalNumber" dbNotNull="false" dbPosition="14" dbSize="10" dbTypeName="DECIMAL" inputType="number" javaName="decimalnumber" javaType="java.math.BigDecimal" jdbcTypeCode="3" label="Decimalnumber" notNull="false" selected="true"/>
+            <column dateType="D" dbComment="$ro=&quot;true&quot;;" dbDefaultValue="" dbName="Year" dbNotNull="false" dbPosition="15" dbSize="0" dbTypeName="YEAR" inputType="date" javaName="year" javaType="java.util.Date" jdbcTypeCode="91" label="Year" notNull="false" selected="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_hours_projects1" id="LINK_FK_fk_hours_projects1_I" inverseSideOf="LINK_FK_fk_hours_projects1_O" javaName="listOfHours" javaType="java.util.List" joinTableName="" mappedBy="projects" optional="" owningSide="false" sourceTableName="projects" targetEntity="Hours" targetTableName="hours" used="true"/>
+        </table>
+    </tableList>
+</root>

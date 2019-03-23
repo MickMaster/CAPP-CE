@@ -1,0 +1,184 @@
+#*
+###############################################################################################
+'
+' This here is the sample field for all attributes like:
+'
+' $label     ' Descriptive text as label
+' $format    ' sets the format attribute 
+' $mask      ' sets the entry mask
+' $just      ' Justification l/m/c
+' $hide      ' Generated but not visible true/false
+' $ro        ' Field visible but not writable true/false
+' $width     ' Width in pixels
+' $height    ' Height in pixels
+' $fgcol     ' Foreground color 
+' $bgcol     ' Background color
+'
+' This one is handled directly in the templete ... :
+'
+' $skip      ' Ignored in generation process true/false
+'
+###############################################################################################
+*#
+#set ( $fieldname = ${field.databaseName} )
+#set ( $fieldname = ${fieldname.replace(" ","")} )
+#set ( $label = "${fieldname}" )
+#set ( $format = "" )
+#set ( $mask = "" )
+#set ( $just = "" )
+#set ( $hide = "false" )
+#set ( $ro = "false" )
+#set ( $width = "0" )
+#set ( $height = "0" )
+#set ( $fgcol = "" )
+#set ( $bgcol = "" )
+#set ( $skip = "false" )
+#set ( $black = "&c000000" )
+#set ( $white = "&cFFFFFF" )
+##
+#if ( ${skip} == "false" )
+##
+## sorry to have some exceptions here
+##
+#if ( $field.databaseType != "BIT" )
+#if ( $field.databaseType != "BOOLEAN" )
+#if ( $field.databaseType != "BLOB" )
+#if ( $field.databaseType != "ENUM" )
+#if ( $field.databaseType != "SET" )
+                '
+                ' Flags for field "${fieldname}"
+                ' --------------------------------------------
+                ' Descriptive text as Label         : ${label}
+                ' sets the format attribute         : ${format}    
+                ' sets the entry Mask               : ${mask}      
+                ' Justification l/m/c               : ${just}      
+                ' Not visible true/false            : ${hide}      
+                ' Field not writable true/false     : ${ro}
+                ' Width in pixels                   : ${width}
+                ' Height in pixels                  : ${height}
+                ' Foreground color                  : ${fgcol}
+                ' Background color                  : ${bgcol}
+                ' Ignored in generation true/false  : ${skip}
+                '
+                ' Field "${fieldname}" as ${field.databaseType}
+                '
+                Dim m_${fieldname}Label As String = "${label}"
+                If Len(Trim(m_${fieldname}Label))>0 Then
+                  ${fieldname}Label.Text = m_${fieldname}Label 
+                End If
+                Dim m_${fieldname}Format As String = "$!format"          
+                If Len(Trim(m_${fieldname}Format))>0 Then
+                  ${fieldname}TextField.Format = m_${fieldname}Format 
+                End If
+                Dim m_${fieldname}Mask As String = "$!mask"            
+                If Len(Trim(m_${fieldname}Mask))>0 Then
+                  ${fieldname}TextField.Mask = m_${fieldname}Mask 
+                End If
+                Dim m_${fieldname}Justification As String = "$!just"               
+                If Len(Trim(m_${fieldname}Justification))>0 Then
+                  Select Case m_${fieldname}Justification
+                  Case "l","L"
+                    ${fieldname}TextField.Alignment = 1
+                  Case "c","C"
+                    ${fieldname}TextField.Alignment = 2
+                  Case "r","R"
+                    ${fieldname}TextField.Alignment = 3
+                  Else
+                    ${fieldname}TextField.Alignment = 0
+                  End Select
+                End If
+                Dim m_${fieldname}Hide As String = "$!hide"                    
+                If Trim(Uppercase(m_${fieldname}Hide))="TRUE" Then
+                  ${fieldname}TextField.Visible = False
+                  ${fieldname}Label.Visible = False
+                End If
+                Dim m_${fieldname}Ro As String = "$!ro"                       
+                If Trim(Uppercase(m_${fieldname}Ro))="TRUE" Then
+                  ${fieldname}TextField.Enabled = False
+                End If
+                Dim m_${fieldname}Width As String = "$!width"                       
+                If Val(m_${fieldname}Width)>0 Then
+                  ${fieldname}TextField.Width = Val(m_${fieldname}Width)
+                End If
+                Dim m_${fieldname}Height As String = "$!height"                         
+                If Val(m_${fieldname}Height)>0 Then
+                  ${fieldname}TextField.Height = Val(m_${fieldname}Height)
+                End If
+                Dim m_${fieldname}Fgcol As String = "$!fgcol"                        
+                If Len(Trim(m_${fieldname}Fgcol))>0 Then
+                  Dim m_${fieldname}Fgcolor As Color
+                  m_${fieldname}Fgcolor = #if ( $fgcol == "" ) ${black} #else ${fgcol} #end
+
+                  ${fieldname}TextField.TextColor = m_${fieldname}Fgcolor
+                End If
+                Dim m_${fieldname}Bgcol As String = "$!bgcol"                         
+                If Len(Trim(m_${fieldname}Bgcol))>0 Then
+                  Dim m_${fieldname}Bgcolor As Color
+                  m_${fieldname}Bgcolor = #if ( $bgcol == "" ) ${white} #else ${bgcol} #end
+
+                  ${fieldname}TextField.BackColor = m_${fieldname}Bgcolor
+                End If
+#end
+#end
+#if ( ${field.databaseType} == "DOUBLE" )
+                ${fieldname}TextField.Text = Str(data.Field("${fieldname}").DoubleValue)
+#end
+#if ( ${field.databaseType} == "DECIMAL" )
+                ${fieldname}TextField.Text = Str(data.Field("${fieldname}").DoubleValue)
+#end
+#if ( ${field.databaseType} == "INT" )
+                ${fieldname}TextField.Text = Str(data.Field("${fieldname}").IntegerValue)
+#end
+#if ( ${field.databaseType} == "SMALLINT" )
+                ${fieldname}TextField.Text = Str(data.Field("${fieldname}").IntegerValue)
+#end
+#if ( ${field.databaseType} == "SMALLINT UNSIGNED" )
+                ${fieldname}TextField.Text = Str(data.Field("${fieldname}").IntegerValue)
+#end
+#if ( ${field.databaseType} == "MEDIUMINT" )
+                ${fieldname}TextField.Text = Str(data.Field("${fieldname}").Int64Value)
+#end
+#if ( ${field.databaseType} == "MEDIUMINT UNSIGNED" )
+                ${fieldname}TextField.Text = Str(data.Field("${fieldname}").Int64Value)
+#end
+#if ( ${field.databaseType} == "SIMPLEINT" )
+                ${fieldname}TextField.Text = Str(data.Field("${fieldname}").Int64Value)
+#end
+#if ( ${field.databaseType} == "TINYINT UNSIGNED" )
+                ${fieldname}TextField.Text = Str(data.Field("${fieldname}").IntegerValue)
+#end
+#if ( ${field.databaseType} == "TEXT" )
+                ${fieldname}TextField.Text = data.Field("${fieldname}").StringValue.DefineEncoding(encodings.utf8)
+#end
+#if ( ${field.databaseType} == "TINYTEXT" )
+                ${fieldname}TextField.Text = data.Field("${fieldname}").StringValue.DefineEncoding(encodings.utf8)
+#end
+#if ( ${field.databaseType} == "VARCHAR" )
+                ${fieldname}TextField.Text = data.Field("${fieldname}").StringValue.DefineEncoding(encodings.utf8)
+#end
+#if ( ${field.databaseType} == "CHAR" )
+                ${fieldname}TextField.Text = data.Field("${fieldname}").StringValue.DefineEncoding(encodings.utf8)
+#end
+#if ( ${field.databaseType} == "DATE" )
+                ${fieldname}TextField.Text = d_${fieldname}.AbbreviatedDate
+#end
+#if ( ${field.databaseType} == "YEAR" )
+                ${fieldname}TextField.Text = data.field("${fieldname}").Stringvalue
+#end
+#if ( ${field.databaseType} == "DATETIME" )
+                ${fieldname}TextField.Text = d_${fieldname}.ShortTime ' .Hour) + ":" + Str(d_${fieldname}.Minute)
+#end
+#if ( ${field.databaseType} == "TIMESTAMP" )
+                ${fieldname}TextField.Text = d_${fieldname}.SQLDateTime
+#end
+#if ( ${field.databaseType} == "BIT" )
+                ${fieldname}CheckBox.Value = d_${fieldname}.Value
+#end
+#if ( ${field.databaseType} == "BOOLEAN" )
+                ${fieldname}CheckBox.Value = d_${fieldname}.Value
+#end
+## end for skip var (!)
+#end
+#end
+#end
+#end

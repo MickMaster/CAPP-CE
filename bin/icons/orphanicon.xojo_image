@@ -1,0 +1,40 @@
+#tag MultiImage
+Image orphanicon
+	#tag ImageRepresentation
+		SaveInfo = APHRcwECAQAAAAFIAAAAAAFIAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8Ob3JwaGFuaWNvbi5wbmcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAP////8AAAogY3UAAAAAAAAAAAAAAAAABWljb25zAAACACwvOlByb2c6Q0FQUDpDQVBQLUNFOmJpbjppY29uczpvcnBoYW5pY29uLnBuZwAOAB4ADgBvAHIAcABoAGEAbgBpAGMAbwBuAC4AcABuAGcADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgAqUHJvZy9DQVBQL0NBUFAtQ0UvYmluL2ljb25zL29ycGhhbmljb24ucG5nABMAAS8A//8AAAAAAAAAAA==
+		FullPath = /Prog/CAPP/CAPP-CE/bin/icons/orphanicon.png
+		PartialPath = icons\orphanicon.png
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 52.00
+			Orientation = Any
+			Platform = 15
+			PPI = 72
+			VSize = 52.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 52.00
+			Orientation = Any
+			Platform = 15
+			PPI = 144
+			VSize = 52.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+	#tag ImageRepresentation
+		#tag ImageSpecification
+			Comment = 
+			Device = 31
+			HSize = 52.00
+			Orientation = Any
+			Platform = 15
+			PPI = 216
+			VSize = 52.00
+		#tag EndImageSpecification
+	#tag EndImageRepresentation
+End Image
+#tag EndMultiImage

@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Telosys Database Repository --><root>
+    <tableList databaseId="1" databaseName="sakila" databaseProductName="MySQL" generation="2019-03-23 12:17:15">
+        <table catalog="sakila" databaseType="TABLE" javaBean="Actor" name="actor" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="actor_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="actorId" javaType="java.lang.Short" jdbcTypeCode="5" label="Actor id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="first_name" dbNotNull="true" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="firstName" javaType="java.lang.String" jdbcTypeCode="12" label="First name" maxLength="45" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="last_name" dbNotNull="true" dbPosition="3" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="lastName" javaType="java.lang.String" jdbcTypeCode="12" label="Last name" maxLength="45" notEmpty="true" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="4" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_film_actor_actor" id="LINK_FK_fk_film_actor_actor_I" inverseSideOf="LINK_FK_fk_film_actor_actor_O" javaName="listOfFilmActor" javaType="java.util.List" joinTableName="" mappedBy="actor" optional="" owningSide="false" sourceTableName="actor" targetEntity="FilmActor" targetTableName="film_actor" used="true"/>
+        </table>
+        <table catalog="sakila" databaseType="VIEW" javaBean="ActorInfo" name="actor_info" schema="">
+            <column dbComment="" dbDefaultValue="0" dbName="actor_id" dbNotNull="true" dbPosition="1" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="actorId" javaType="java.lang.Short" jdbcTypeCode="5" label="Actor id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="first_name" dbNotNull="true" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="firstName" javaType="java.lang.String" jdbcTypeCode="12" label="First name" maxLength="45" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="last_name" dbNotNull="true" dbPosition="3" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="lastName" javaType="java.lang.String" jdbcTypeCode="12" label="Last name" maxLength="45" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="film_info" dbNotNull="false" dbPosition="4" dbSize="65535" dbTypeName="TEXT" inputType="text" javaName="filmInfo" javaType="java.lang.String" jdbcTypeCode="-1" label="Film info" longText="true" maxLength="65535" notNull="false" selected="true"/>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="Address" name="address" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="address_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="addressId" javaType="java.lang.Short" jdbcTypeCode="5" label="Address id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="address" dbNotNull="true" dbPosition="2" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="address" javaType="java.lang.String" jdbcTypeCode="12" label="Address" maxLength="50" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="address2" dbNotNull="false" dbPosition="3" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="address2" javaType="java.lang.String" jdbcTypeCode="12" label="Address2" maxLength="50" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="district" dbNotNull="true" dbPosition="4" dbSize="20" dbTypeName="VARCHAR" inputType="text" javaName="district" javaType="java.lang.String" jdbcTypeCode="12" label="District" maxLength="20" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="city_id" dbNotNull="true" dbPosition="5" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="cityId" javaType="java.lang.Short" jdbcTypeCode="5" label="City id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="postal_code" dbNotNull="false" dbPosition="6" dbSize="10" dbTypeName="VARCHAR" inputType="text" javaName="postalCode" javaType="java.lang.String" jdbcTypeCode="12" label="Postal code" maxLength="10" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="phone" dbNotNull="true" dbPosition="7" dbSize="20" dbTypeName="VARCHAR" inputType="text" javaName="phone" javaType="java.lang.String" jdbcTypeCode="12" label="Phone" maxLength="20" notEmpty="true" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="8" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <fk name="fk_address_city">
+                <fkcol colname="city_id" colref="city_id" deferrable="7" deleterule="3" sequence="1" tablename="address" tableref="city" updaterule="0"/>
+            </fk>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_store_address" id="LINK_FK_fk_store_address_I" inverseSideOf="LINK_FK_fk_store_address_O" javaName="listOfStore" javaType="java.util.List" joinTableName="" mappedBy="address" optional="" owningSide="false" sourceTableName="address" targetEntity="Store" targetTableName="store" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_staff_address" id="LINK_FK_fk_staff_address_I" inverseSideOf="LINK_FK_fk_staff_address_O" javaName="listOfStaff" javaType="java.util.List" joinTableName="" mappedBy="address" optional="" owningSide="false" sourceTableName="address" targetEntity="Staff" targetTableName="staff" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_address_city" id="LINK_FK_fk_address_city_O" inverseSideOf="" javaName="city" javaType="City" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="address" targetEntity="City" targetTableName="city" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="city_id" nullable="true" referencedColumnName="city_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_customer_address" id="LINK_FK_fk_customer_address_I" inverseSideOf="LINK_FK_fk_customer_address_O" javaName="listOfCustomer" javaType="java.util.List" joinTableName="" mappedBy="address" optional="" owningSide="false" sourceTableName="address" targetEntity="Customer" targetTableName="customer" used="true"/>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="Category" name="category" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="category_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="categoryId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Category id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="name" dbNotNull="true" dbPosition="2" dbSize="25" dbTypeName="VARCHAR" inputType="text" javaName="name" javaType="java.lang.String" jdbcTypeCode="12" label="Name" maxLength="25" notEmpty="true" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="3" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_film_category_category" id="LINK_FK_fk_film_category_category_I" inverseSideOf="LINK_FK_fk_film_category_category_O" javaName="listOfFilmCategory" javaType="java.util.List" joinTableName="" mappedBy="category" optional="" owningSide="false" sourceTableName="category" targetEntity="FilmCategory" targetTableName="film_category" used="true"/>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="City" name="city" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="city_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="cityId" javaType="java.lang.Short" jdbcTypeCode="5" label="City id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="city" dbNotNull="true" dbPosition="2" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="city" javaType="java.lang.String" jdbcTypeCode="12" label="City" maxLength="50" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="country_id" dbNotNull="true" dbPosition="3" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="countryId" javaType="java.lang.Short" jdbcTypeCode="5" label="Country id" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="4" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <fk name="fk_city_country">
+                <fkcol colname="country_id" colref="country_id" deferrable="7" deleterule="3" sequence="1" tablename="city" tableref="country" updaterule="0"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_city_country" id="LINK_FK_fk_city_country_O" inverseSideOf="" javaName="country" javaType="Country" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="city" targetEntity="Country" targetTableName="country" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="country_id" nullable="true" referencedColumnName="country_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_address_city" id="LINK_FK_fk_address_city_I" inverseSideOf="LINK_FK_fk_address_city_O" javaName="listOfAddress" javaType="java.util.List" joinTableName="" mappedBy="city" optional="" owningSide="false" sourceTableName="city" targetEntity="Address" targetTableName="address" used="true"/>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="Country" name="country" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="country_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="countryId" javaType="java.lang.Short" jdbcTypeCode="5" label="Country id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="country" dbNotNull="true" dbPosition="2" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="country" javaType="java.lang.String" jdbcTypeCode="12" label="Country" maxLength="50" notEmpty="true" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="3" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_city_country" id="LINK_FK_fk_city_country_I" inverseSideOf="LINK_FK_fk_city_country_O" javaName="listOfCity" javaType="java.util.List" joinTableName="" mappedBy="country" optional="" owningSide="false" sourceTableName="country" targetEntity="City" targetTableName="city" used="true"/>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="Customer" name="customer" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="customer_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="customerId" javaType="java.lang.Short" jdbcTypeCode="5" label="Customer id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="store_id" dbNotNull="true" dbPosition="2" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="storeId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Store id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="first_name" dbNotNull="true" dbPosition="3" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="firstName" javaType="java.lang.String" jdbcTypeCode="12" label="First name" maxLength="45" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="last_name" dbNotNull="true" dbPosition="4" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="lastName" javaType="java.lang.String" jdbcTypeCode="12" label="Last name" maxLength="45" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="email" dbNotNull="false" dbPosition="5" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="email" javaType="java.lang.String" jdbcTypeCode="12" label="Email" maxLength="50" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="address_id" dbNotNull="true" dbPosition="6" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="addressId" javaType="java.lang.Short" jdbcTypeCode="5" label="Address id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="1" dbName="active" dbNotNull="true" dbPosition="7" dbSize="0" dbTypeName="BIT" inputType="checkbox" javaName="active" javaType="java.lang.Boolean" jdbcTypeCode="-7" label="Active" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="create_date" dbNotNull="true" dbPosition="8" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="createDate" javaType="java.util.Date" jdbcTypeCode="93" label="Create date" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="9" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <fk name="fk_customer_address">
+                <fkcol colname="address_id" colref="address_id" deferrable="7" deleterule="3" sequence="1" tablename="customer" tableref="address" updaterule="0"/>
+            </fk>
+            <fk name="fk_customer_store">
+                <fkcol colname="store_id" colref="store_id" deferrable="7" deleterule="3" sequence="1" tablename="customer" tableref="store" updaterule="0"/>
+            </fk>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_rental_customer" id="LINK_FK_fk_rental_customer_I" inverseSideOf="LINK_FK_fk_rental_customer_O" javaName="listOfRental" javaType="java.util.List" joinTableName="" mappedBy="customer" optional="" owningSide="false" sourceTableName="customer" targetEntity="Rental" targetTableName="rental" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_customer_store" id="LINK_FK_fk_customer_store_O" inverseSideOf="" javaName="store" javaType="Store" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="customer" targetEntity="Store" targetTableName="store" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="store_id" nullable="true" referencedColumnName="store_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_payment_customer" id="LINK_FK_fk_payment_customer_I" inverseSideOf="LINK_FK_fk_payment_customer_O" javaName="listOfPayment" javaType="java.util.List" joinTableName="" mappedBy="customer" optional="" owningSide="false" sourceTableName="customer" targetEntity="Payment" targetTableName="payment" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_customer_address" id="LINK_FK_fk_customer_address_O" inverseSideOf="" javaName="address" javaType="Address" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="customer" targetEntity="Address" targetTableName="address" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="address_id" nullable="true" referencedColumnName="address_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="sakila" databaseType="VIEW" javaBean="CustomerList" name="customer_list" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="0" dbName="ID" dbNotNull="true" dbPosition="1" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="id" javaType="java.lang.Short" jdbcTypeCode="5" label="Id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="name" dbNotNull="false" dbPosition="2" dbSize="91" dbTypeName="VARCHAR" inputType="text" javaName="name" javaType="java.lang.String" jdbcTypeCode="12" label="Name" maxLength="91" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="address" dbNotNull="true" dbPosition="3" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="address" javaType="java.lang.String" jdbcTypeCode="12" label="Address" maxLength="50" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="zip code" dbNotNull="false" dbPosition="4" dbSize="10" dbTypeName="VARCHAR" inputType="text" javaName="zip code" javaType="java.lang.String" jdbcTypeCode="12" label="Zip code" maxLength="10" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="phone" dbNotNull="true" dbPosition="5" dbSize="20" dbTypeName="VARCHAR" inputType="text" javaName="phone" javaType="java.lang.String" jdbcTypeCode="12" label="Phone" maxLength="20" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="city" dbNotNull="true" dbPosition="6" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="city" javaType="java.lang.String" jdbcTypeCode="12" label="City" maxLength="50" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="country" dbNotNull="true" dbPosition="7" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="country" javaType="java.lang.String" jdbcTypeCode="12" label="Country" maxLength="50" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="notes" dbNotNull="true" dbPosition="8" dbSize="6" dbTypeName="VARCHAR" inputType="text" javaName="notes" javaType="java.lang.String" jdbcTypeCode="12" label="Notes" maxLength="6" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="SID" dbNotNull="true" dbPosition="9" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="sid" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Sid" notNull="true" selected="true"/>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="Film" name="film" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="film_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="filmId" javaType="java.lang.Short" jdbcTypeCode="5" label="Film id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="title" dbNotNull="true" dbPosition="2" dbSize="255" dbTypeName="VARCHAR" inputType="text" javaName="title" javaType="java.lang.String" jdbcTypeCode="12" label="Title" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="$height=100;" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="3" dbSize="65535" dbTypeName="TEXT" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="-1" label="Description" longText="true" maxLength="65535" notNull="false" selected="true"/>
+            <column dateType="D" dbComment="" dbDefaultValue="" dbName="release_year" dbNotNull="false" dbPosition="4" dbSize="0" dbTypeName="YEAR" inputType="date" javaName="releaseYear" javaType="java.util.Date" jdbcTypeCode="91" label="Release year" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="language_id" dbNotNull="true" dbPosition="5" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="languageId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Language id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="original_language_id" dbNotNull="false" dbPosition="6" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="originalLanguageId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Original language id" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="3" dbName="rental_duration" dbNotNull="true" dbPosition="7" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="rentalDuration" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Rental duration" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="4.99" dbName="rental_rate" dbNotNull="true" dbPosition="8" dbSize="4" dbTypeName="DECIMAL" inputType="number" javaName="rentalRate" javaType="java.math.BigDecimal" jdbcTypeCode="3" label="Rental rate" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="length" dbNotNull="false" dbPosition="9" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="length" javaType="java.lang.Short" jdbcTypeCode="5" label="Length" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="19.99" dbName="replacement_cost" dbNotNull="true" dbPosition="10" dbSize="5" dbTypeName="DECIMAL" inputType="number" javaName="replacementCost" javaType="java.math.BigDecimal" jdbcTypeCode="3" label="Replacement cost" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="G" dbName="rating" dbNotNull="false" dbPosition="11" dbSize="5" dbTypeName="ENUM" inputType="text" javaName="rating" javaType="java.lang.String" jdbcTypeCode="1" label="Rating" maxLength="5" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="special_features" dbNotNull="false" dbPosition="12" dbSize="54" dbTypeName="SET" inputType="text" javaName="specialFeatures" javaType="java.lang.String" jdbcTypeCode="1" label="Special features" maxLength="54" notNull="false" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="13" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <fk name="fk_film_language">
+                <fkcol colname="language_id" colref="language_id" deferrable="7" deleterule="3" sequence="1" tablename="film" tableref="language" updaterule="0"/>
+            </fk>
+            <fk name="fk_film_language_original">
+                <fkcol colname="original_language_id" colref="language_id" deferrable="7" deleterule="3" sequence="1" tablename="film" tableref="language" updaterule="0"/>
+            </fk>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_inventory_film" id="LINK_FK_fk_inventory_film_I" inverseSideOf="LINK_FK_fk_inventory_film_O" javaName="listOfInventory" javaType="java.util.List" joinTableName="" mappedBy="film" optional="" owningSide="false" sourceTableName="film" targetEntity="Inventory" targetTableName="inventory" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_film_actor_film" id="LINK_FK_fk_film_actor_film_I" inverseSideOf="LINK_FK_fk_film_actor_film_O" javaName="listOfFilmActor" javaType="java.util.List" joinTableName="" mappedBy="film" optional="" owningSide="false" sourceTableName="film" targetEntity="FilmActor" targetTableName="film_actor" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_film_language" id="LINK_FK_fk_film_language_O" inverseSideOf="" javaName="language" javaType="Language" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="film" targetEntity="Language" targetTableName="language" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="language_id" nullable="true" referencedColumnName="language_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_film_category_film" id="LINK_FK_fk_film_category_film_I" inverseSideOf="LINK_FK_fk_film_category_film_O" javaName="listOfFilmCategory" javaType="java.util.List" joinTableName="" mappedBy="film" optional="" owningSide="false" sourceTableName="film" targetEntity="FilmCategory" targetTableName="film_category" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_film_language_original" id="LINK_FK_fk_film_language_original_O" inverseSideOf="" javaName="language2" javaType="Language" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="film" targetEntity="Language" targetTableName="language" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="original_language_id" nullable="true" referencedColumnName="language_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="FilmActor" name="film_actor" schema="">
+            <column dbComment="" dbDefaultValue="" dbName="actor_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="actorId" javaType="java.lang.Short" jdbcTypeCode="5" label="Actor id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="film_id" dbNotNull="true" dbPosition="2" dbPrimaryKey="true" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="filmId" javaType="java.lang.Short" jdbcTypeCode="5" label="Film id" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="3" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <fk name="fk_film_actor_actor">
+                <fkcol colname="actor_id" colref="actor_id" deferrable="7" deleterule="3" sequence="1" tablename="film_actor" tableref="actor" updaterule="0"/>
+            </fk>
+            <fk name="fk_film_actor_film">
+                <fkcol colname="film_id" colref="film_id" deferrable="7" deleterule="3" sequence="1" tablename="film_actor" tableref="film" updaterule="0"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_film_actor_film" id="LINK_FK_fk_film_actor_film_O" inverseSideOf="" javaName="film" javaType="Film" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="film_actor" targetEntity="Film" targetTableName="film" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="film_id" nullable="true" referencedColumnName="film_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_film_actor_actor" id="LINK_FK_fk_film_actor_actor_O" inverseSideOf="" javaName="actor" javaType="Actor" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="film_actor" targetEntity="Actor" targetTableName="actor" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="actor_id" nullable="true" referencedColumnName="actor_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="FilmCategory" name="film_category" schema="">
+            <column dbComment="" dbDefaultValue="" dbName="film_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="filmId" javaType="java.lang.Short" jdbcTypeCode="5" label="Film id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="category_id" dbNotNull="true" dbPosition="2" dbPrimaryKey="true" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="categoryId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Category id" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="3" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <fk name="fk_film_category_category">
+                <fkcol colname="category_id" colref="category_id" deferrable="7" deleterule="3" sequence="1" tablename="film_category" tableref="category" updaterule="0"/>
+            </fk>
+            <fk name="fk_film_category_film">
+                <fkcol colname="film_id" colref="film_id" deferrable="7" deleterule="3" sequence="1" tablename="film_category" tableref="film" updaterule="0"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_film_category_category" id="LINK_FK_fk_film_category_category_O" inverseSideOf="" javaName="category" javaType="Category" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="film_category" targetEntity="Category" targetTableName="category" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="category_id" nullable="true" referencedColumnName="category_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_film_category_film" id="LINK_FK_fk_film_category_film_O" inverseSideOf="" javaName="film" javaType="Film" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="film_category" targetEntity="Film" targetTableName="film" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="film_id" nullable="true" referencedColumnName="film_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="sakila" databaseType="VIEW" javaBean="FilmList" name="film_list" schema="">
+            <column dbComment="" dbDefaultValue="0" dbName="FID" dbNotNull="false" dbPosition="1" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="fid" javaType="java.lang.Short" jdbcTypeCode="5" label="Fid" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="title" dbNotNull="false" dbPosition="2" dbSize="255" dbTypeName="VARCHAR" inputType="text" javaName="title" javaType="java.lang.String" jdbcTypeCode="12" label="Title" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="$height=100;" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="3" dbSize="65535" dbTypeName="TEXT" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="-1" label="Description" longText="true" maxLength="65535" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="category" dbNotNull="true" dbPosition="4" dbSize="25" dbTypeName="VARCHAR" inputType="text" javaName="category" javaType="java.lang.String" jdbcTypeCode="12" label="Category" maxLength="25" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="4.99" dbName="price" dbNotNull="false" dbPosition="5" dbSize="4" dbTypeName="DECIMAL" inputType="number" javaName="price" javaType="java.math.BigDecimal" jdbcTypeCode="3" label="Price" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="length" dbNotNull="false" dbPosition="6" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="length" javaType="java.lang.Short" jdbcTypeCode="5" label="Length" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="G" dbName="rating" dbNotNull="false" dbPosition="7" dbSize="5" dbTypeName="ENUM" inputType="text" javaName="rating" javaType="java.lang.String" jdbcTypeCode="1" label="Rating" maxLength="5" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="actors" dbNotNull="false" dbPosition="8" dbSize="65535" dbTypeName="TEXT" inputType="text" javaName="actors" javaType="java.lang.String" jdbcTypeCode="-1" label="Actors" longText="true" maxLength="65535" notNull="false" selected="true"/>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="FilmText" name="film_text" schema="">
+            <column dbComment="" dbDefaultValue="" dbName="film_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="5" dbTypeName="SMALLINT" inputType="number" javaName="filmId" javaType="java.lang.Short" jdbcTypeCode="5" label="Film id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="title" dbNotNull="true" dbPosition="2" dbSize="255" dbTypeName="VARCHAR" inputType="text" javaName="title" javaType="java.lang.String" jdbcTypeCode="12" label="Title" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="3" dbSize="65535" dbTypeName="TEXT" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="-1" label="Description" longText="true" maxLength="65535" notNull="false" selected="true"/>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="Inventory" name="inventory" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="inventory_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="8" dbTypeName="MEDIUMINT UNSIGNED" inputType="number" javaName="inventoryId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Inventory id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="film_id" dbNotNull="true" dbPosition="2" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="filmId" javaType="java.lang.Short" jdbcTypeCode="5" label="Film id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="store_id" dbNotNull="true" dbPosition="3" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="storeId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Store id" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="4" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <fk name="fk_inventory_film">
+                <fkcol colname="film_id" colref="film_id" deferrable="7" deleterule="3" sequence="1" tablename="inventory" tableref="film" updaterule="0"/>
+            </fk>
+            <fk name="fk_inventory_store">
+                <fkcol colname="store_id" colref="store_id" deferrable="7" deleterule="3" sequence="1" tablename="inventory" tableref="store" updaterule="0"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_inventory_film" id="LINK_FK_fk_inventory_film_O" inverseSideOf="" javaName="film" javaType="Film" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="inventory" targetEntity="Film" targetTableName="film" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="film_id" nullable="true" referencedColumnName="film_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_inventory_store" id="LINK_FK_fk_inventory_store_O" inverseSideOf="" javaName="store" javaType="Store" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="inventory" targetEntity="Store" targetTableName="store" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="store_id" nullable="true" referencedColumnName="store_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_rental_inventory" id="LINK_FK_fk_rental_inventory_I" inverseSideOf="LINK_FK_fk_rental_inventory_O" javaName="listOfRental" javaType="java.util.List" joinTableName="" mappedBy="inventory" optional="" owningSide="false" sourceTableName="inventory" targetEntity="Rental" targetTableName="rental" used="true"/>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="Language" name="language" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="language_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="languageId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Language id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="name" dbNotNull="true" dbPosition="2" dbSize="20" dbTypeName="CHAR" inputType="text" javaName="name" javaType="java.lang.String" jdbcTypeCode="1" label="Name" maxLength="20" notEmpty="true" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="3" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_film_language_original" id="LINK_FK_fk_film_language_original_I" inverseSideOf="LINK_FK_fk_film_language_original_O" javaName="listOfFilm2" javaType="java.util.List" joinTableName="" mappedBy="language2" optional="" owningSide="false" sourceTableName="language" targetEntity="Film" targetTableName="film" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_film_language" id="LINK_FK_fk_film_language_I" inverseSideOf="LINK_FK_fk_film_language_O" javaName="listOfFilm" javaType="java.util.List" joinTableName="" mappedBy="language" optional="" owningSide="false" sourceTableName="language" targetEntity="Film" targetTableName="film" used="true"/>
+        </table>
+        <table catalog="sakila" databaseType="VIEW" javaBean="NicerButSlowerFilmList" name="nicer_but_slower_film_list" schema="">
+            <column dbComment="" dbDefaultValue="0" dbName="FID" dbNotNull="false" dbPosition="1" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="fid" javaType="java.lang.Short" jdbcTypeCode="5" label="Fid" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="title" dbNotNull="false" dbPosition="2" dbSize="255" dbTypeName="VARCHAR" inputType="text" javaName="title" javaType="java.lang.String" jdbcTypeCode="12" label="Title" maxLength="255" notNull="false" selected="true"/>
+            <column dbComment="$height=100;" dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="3" dbSize="65535" dbTypeName="TEXT" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="-1" label="Description" longText="true" maxLength="65535" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="category" dbNotNull="true" dbPosition="4" dbSize="25" dbTypeName="VARCHAR" inputType="text" javaName="category" javaType="java.lang.String" jdbcTypeCode="12" label="Category" maxLength="25" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="4.99" dbName="price" dbNotNull="false" dbPosition="5" dbSize="4" dbTypeName="DECIMAL" inputType="number" javaName="price" javaType="java.math.BigDecimal" jdbcTypeCode="3" label="Price" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="length" dbNotNull="false" dbPosition="6" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="length" javaType="java.lang.Short" jdbcTypeCode="5" label="Length" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="G" dbName="rating" dbNotNull="false" dbPosition="7" dbSize="5" dbTypeName="ENUM" inputType="text" javaName="rating" javaType="java.lang.String" jdbcTypeCode="1" label="Rating" maxLength="5" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="actors" dbNotNull="false" dbPosition="8" dbSize="65535" dbTypeName="TEXT" inputType="text" javaName="actors" javaType="java.lang.String" jdbcTypeCode="-1" label="Actors" longText="true" maxLength="65535" notNull="false" selected="true"/>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="Payment" name="payment" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="payment_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="paymentId" javaType="java.lang.Short" jdbcTypeCode="5" label="Payment id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="customer_id" dbNotNull="true" dbPosition="2" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="customerId" javaType="java.lang.Short" jdbcTypeCode="5" label="Customer id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="staff_id" dbNotNull="true" dbPosition="3" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="staffId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Staff id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="rental_id" dbNotNull="false" dbPosition="4" dbSize="10" dbTypeName="INT" inputType="number" javaName="rentalId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Rental id" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="amount" dbNotNull="true" dbPosition="5" dbSize="5" dbTypeName="DECIMAL" inputType="number" javaName="amount" javaType="java.math.BigDecimal" jdbcTypeCode="3" label="Amount" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="payment_date" dbNotNull="true" dbPosition="6" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="paymentDate" javaType="java.util.Date" jdbcTypeCode="93" label="Payment date" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="7" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <fk name="fk_payment_customer">
+                <fkcol colname="customer_id" colref="customer_id" deferrable="7" deleterule="3" sequence="1" tablename="payment" tableref="customer" updaterule="0"/>
+            </fk>
+            <fk name="fk_payment_rental">
+                <fkcol colname="rental_id" colref="rental_id" deferrable="7" deleterule="2" sequence="1" tablename="payment" tableref="rental" updaterule="0"/>
+            </fk>
+            <fk name="fk_payment_staff">
+                <fkcol colname="staff_id" colref="staff_id" deferrable="7" deleterule="3" sequence="1" tablename="payment" tableref="staff" updaterule="0"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_payment_customer" id="LINK_FK_fk_payment_customer_O" inverseSideOf="" javaName="customer" javaType="Customer" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="payment" targetEntity="Customer" targetTableName="customer" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="customer_id" nullable="true" referencedColumnName="customer_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_payment_staff" id="LINK_FK_fk_payment_staff_O" inverseSideOf="" javaName="staff" javaType="Staff" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="payment" targetEntity="Staff" targetTableName="staff" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="staff_id" nullable="true" referencedColumnName="staff_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_payment_rental" id="LINK_FK_fk_payment_rental_O" inverseSideOf="" javaName="rental" javaType="Rental" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="payment" targetEntity="Rental" targetTableName="rental" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="rental_id" nullable="true" referencedColumnName="rental_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="Rental" name="rental" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="rental_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="rentalId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Rental id" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="rental_date" dbNotNull="true" dbPosition="2" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="rentalDate" javaType="java.util.Date" jdbcTypeCode="93" label="Rental date" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="inventory_id" dbNotNull="true" dbPosition="3" dbSize="8" dbTypeName="MEDIUMINT UNSIGNED" inputType="number" javaName="inventoryId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Inventory id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="customer_id" dbNotNull="true" dbPosition="4" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="customerId" javaType="java.lang.Short" jdbcTypeCode="5" label="Customer id" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="" dbName="return_date" dbNotNull="false" dbPosition="5" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="returnDate" javaType="java.util.Date" jdbcTypeCode="93" label="Return date" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="staff_id" dbNotNull="true" dbPosition="6" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="staffId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Staff id" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="7" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <fk name="fk_rental_customer">
+                <fkcol colname="customer_id" colref="customer_id" deferrable="7" deleterule="3" sequence="1" tablename="rental" tableref="customer" updaterule="0"/>
+            </fk>
+            <fk name="fk_rental_inventory">
+                <fkcol colname="inventory_id" colref="inventory_id" deferrable="7" deleterule="3" sequence="1" tablename="rental" tableref="inventory" updaterule="0"/>
+            </fk>
+            <fk name="fk_rental_staff">
+                <fkcol colname="staff_id" colref="staff_id" deferrable="7" deleterule="3" sequence="1" tablename="rental" tableref="staff" updaterule="0"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_rental_staff" id="LINK_FK_fk_rental_staff_O" inverseSideOf="" javaName="staff" javaType="Staff" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="rental" targetEntity="Staff" targetTableName="staff" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="staff_id" nullable="true" referencedColumnName="staff_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_rental_inventory" id="LINK_FK_fk_rental_inventory_O" inverseSideOf="" javaName="inventory" javaType="Inventory" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="rental" targetEntity="Inventory" targetTableName="inventory" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="inventory_id" nullable="true" referencedColumnName="inventory_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_rental_customer" id="LINK_FK_fk_rental_customer_O" inverseSideOf="" javaName="customer" javaType="Customer" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="rental" targetEntity="Customer" targetTableName="customer" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="customer_id" nullable="true" referencedColumnName="customer_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_payment_rental" id="LINK_FK_fk_payment_rental_I" inverseSideOf="LINK_FK_fk_payment_rental_O" javaName="listOfPayment" javaType="java.util.List" joinTableName="" mappedBy="rental" optional="" owningSide="false" sourceTableName="rental" targetEntity="Payment" targetTableName="payment" used="true"/>
+        </table>
+        <table catalog="sakila" databaseType="VIEW" javaBean="SalesByFilmCategory" name="sales_by_film_category" schema="">
+            <column dbComment="" dbDefaultValue="" dbName="category" dbNotNull="true" dbPosition="1" dbSize="25" dbTypeName="VARCHAR" inputType="text" javaName="category" javaType="java.lang.String" jdbcTypeCode="12" label="Category" maxLength="25" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="total_sales" dbNotNull="false" dbPosition="2" dbSize="27" dbTypeName="DECIMAL" inputType="number" javaName="totalSales" javaType="java.math.BigDecimal" jdbcTypeCode="3" label="Total sales" notNull="false" selected="true"/>
+        </table>
+        <table catalog="sakila" databaseType="VIEW" javaBean="SalesByStore" name="sales_by_store" schema="">
+            <column dbComment="" dbDefaultValue="" dbName="store" dbNotNull="false" dbPosition="1" dbSize="101" dbTypeName="VARCHAR" inputType="text" javaName="store" javaType="java.lang.String" jdbcTypeCode="12" label="Store" maxLength="101" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="manager" dbNotNull="false" dbPosition="2" dbSize="91" dbTypeName="VARCHAR" inputType="text" javaName="manager" javaType="java.lang.String" jdbcTypeCode="12" label="Manager" maxLength="91" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="total_sales" dbNotNull="false" dbPosition="3" dbSize="27" dbTypeName="DECIMAL" inputType="number" javaName="totalSales" javaType="java.math.BigDecimal" jdbcTypeCode="3" label="Total sales" notNull="false" selected="true"/>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="Staff" name="staff" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="staff_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="staffId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Staff id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="first_name" dbNotNull="true" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="firstName" javaType="java.lang.String" jdbcTypeCode="12" label="First name" maxLength="45" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="last_name" dbNotNull="true" dbPosition="3" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="lastName" javaType="java.lang.String" jdbcTypeCode="12" label="Last name" maxLength="45" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="address_id" dbNotNull="true" dbPosition="4" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="addressId" javaType="java.lang.Short" jdbcTypeCode="5" label="Address id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="picture" dbNotNull="false" dbPosition="5" dbSize="65535" dbTypeName="BLOB" inputType="" javaName="picture" javaType="byte[]" jdbcTypeCode="-4" label="Picture" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="email" dbNotNull="false" dbPosition="6" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="email" javaType="java.lang.String" jdbcTypeCode="12" label="Email" maxLength="50" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="store_id" dbNotNull="true" dbPosition="7" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="storeId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Store id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="1" dbName="active" dbNotNull="true" dbPosition="8" dbSize="0" dbTypeName="BIT" inputType="checkbox" javaName="active" javaType="java.lang.Boolean" jdbcTypeCode="-7" label="Active" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="username" dbNotNull="true" dbPosition="9" dbSize="16" dbTypeName="VARCHAR" inputType="text" javaName="username" javaType="java.lang.String" jdbcTypeCode="12" label="Username" maxLength="16" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="password" dbNotNull="false" dbPosition="10" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="password" javaType="java.lang.String" jdbcTypeCode="12" label="Password" maxLength="40" notNull="false" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="11" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <fk name="fk_staff_address">
+                <fkcol colname="address_id" colref="address_id" deferrable="7" deleterule="3" sequence="1" tablename="staff" tableref="address" updaterule="0"/>
+            </fk>
+            <fk name="fk_staff_store">
+                <fkcol colname="store_id" colref="store_id" deferrable="7" deleterule="3" sequence="1" tablename="staff" tableref="store" updaterule="0"/>
+            </fk>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_staff_address" id="LINK_FK_fk_staff_address_O" inverseSideOf="" javaName="address" javaType="Address" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="staff" targetEntity="Address" targetTableName="address" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="address_id" nullable="true" referencedColumnName="address_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_rental_staff" id="LINK_FK_fk_rental_staff_I" inverseSideOf="LINK_FK_fk_rental_staff_O" javaName="listOfRental" javaType="java.util.List" joinTableName="" mappedBy="staff" optional="" owningSide="false" sourceTableName="staff" targetEntity="Rental" targetTableName="rental" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_payment_staff" id="LINK_FK_fk_payment_staff_I" inverseSideOf="LINK_FK_fk_payment_staff_O" javaName="listOfPayment" javaType="java.util.List" joinTableName="" mappedBy="staff" optional="" owningSide="false" sourceTableName="staff" targetEntity="Payment" targetTableName="payment" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_store_staff" id="LINK_FK_fk_store_staff_I" inverseSideOf="LINK_FK_fk_store_staff_O" javaName="listOfStore" javaType="java.util.List" joinTableName="" mappedBy="staff" optional="" owningSide="false" sourceTableName="staff" targetEntity="Store" targetTableName="store" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_staff_store" id="LINK_FK_fk_staff_store_O" inverseSideOf="" javaName="store" javaType="Store" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="staff" targetEntity="Store" targetTableName="store" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="store_id" nullable="true" referencedColumnName="store_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+        </table>
+        <table catalog="sakila" databaseType="VIEW" javaBean="StaffList" name="staff_list" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="0" dbName="ID" dbNotNull="true" dbPosition="1" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="id" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="name" dbNotNull="false" dbPosition="2" dbSize="91" dbTypeName="VARCHAR" inputType="text" javaName="name" javaType="java.lang.String" jdbcTypeCode="12" label="Name" maxLength="91" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="address" dbNotNull="true" dbPosition="3" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="address" javaType="java.lang.String" jdbcTypeCode="12" label="Address" maxLength="50" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="zip code" dbNotNull="false" dbPosition="4" dbSize="10" dbTypeName="VARCHAR" inputType="text" javaName="zip code" javaType="java.lang.String" jdbcTypeCode="12" label="Zip code" maxLength="10" notNull="false" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="phone" dbNotNull="true" dbPosition="5" dbSize="20" dbTypeName="VARCHAR" inputType="text" javaName="phone" javaType="java.lang.String" jdbcTypeCode="12" label="Phone" maxLength="20" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="city" dbNotNull="true" dbPosition="6" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="city" javaType="java.lang.String" jdbcTypeCode="12" label="City" maxLength="50" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="country" dbNotNull="true" dbPosition="7" dbSize="50" dbTypeName="VARCHAR" inputType="text" javaName="country" javaType="java.lang.String" jdbcTypeCode="12" label="Country" maxLength="50" notEmpty="true" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="SID" dbNotNull="true" dbPosition="8" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="sid" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Sid" notNull="true" selected="true"/>
+        </table>
+        <table catalog="sakila" databaseType="TABLE" javaBean="Store" name="store" schema="">
+            <column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="store_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="storeId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Store id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="manager_staff_id" dbNotNull="true" dbPosition="2" dbSize="3" dbTypeName="TINYINT UNSIGNED" inputType="number" javaName="managerStaffId" javaType="java.lang.Byte" jdbcTypeCode="-6" label="Manager staff id" notNull="true" selected="true"/>
+            <column dbComment="" dbDefaultValue="" dbName="address_id" dbNotNull="true" dbPosition="3" dbSize="5" dbTypeName="SMALLINT UNSIGNED" inputType="number" javaName="addressId" javaType="java.lang.Short" jdbcTypeCode="5" label="Address id" notNull="true" selected="true"/>
+            <column dateType="DT" dbComment="" dbDefaultValue="CURRENT_TIMESTAMP" dbName="last_update" dbNotNull="true" dbPosition="4" dbSize="19" dbTypeName="TIMESTAMP" inputType="" javaName="lastUpdate" javaType="java.util.Date" jdbcTypeCode="93" label="Last update" notNull="true" selected="true"/>
+            <fk name="fk_store_address">
+                <fkcol colname="address_id" colref="address_id" deferrable="7" deleterule="3" sequence="1" tablename="store" tableref="address" updaterule="0"/>
+            </fk>
+            <fk name="fk_store_staff">
+                <fkcol colname="manager_staff_id" colref="staff_id" deferrable="7" deleterule="3" sequence="1" tablename="store" tableref="staff" updaterule="0"/>
+            </fk>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_inventory_store" id="LINK_FK_fk_inventory_store_I" inverseSideOf="LINK_FK_fk_inventory_store_O" javaName="listOfInventory" javaType="java.util.List" joinTableName="" mappedBy="store" optional="" owningSide="false" sourceTableName="store" targetEntity="Inventory" targetTableName="inventory" used="true"/>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_store_staff" id="LINK_FK_fk_store_staff_O" inverseSideOf="" javaName="staff" javaType="Staff" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="store" targetEntity="Staff" targetTableName="staff" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="manager_staff_id" nullable="true" referencedColumnName="staff_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="fk_store_address" id="LINK_FK_fk_store_address_O" inverseSideOf="" javaName="address" javaType="Address" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="store" targetEntity="Address" targetTableName="address" used="true">
+                <joinColumns>
+                    <joinColumn insertable="false" name="address_id" nullable="true" referencedColumnName="address_id" unique="false" updatable="false"/>
+                </joinColumns>
+            </link>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_staff_store" id="LINK_FK_fk_staff_store_I" inverseSideOf="LINK_FK_fk_staff_store_O" javaName="listOfStaff" javaType="java.util.List" joinTableName="" mappedBy="store" optional="" owningSide="false" sourceTableName="store" targetEntity="Staff" targetTableName="staff" used="true"/>
+            <link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="fk_customer_store" id="LINK_FK_fk_customer_store_I" inverseSideOf="LINK_FK_fk_customer_store_O" javaName="listOfCustomer" javaType="java.util.List" joinTableName="" mappedBy="store" optional="" owningSide="false" sourceTableName="store" targetEntity="Customer" targetTableName="customer" used="true"/>
+        </table>
+    </tableList>
+</root>

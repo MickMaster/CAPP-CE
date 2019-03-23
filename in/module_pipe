@@ -1,0 +1,4 @@
+h .
+gen * record.vm -r 
+y
+q

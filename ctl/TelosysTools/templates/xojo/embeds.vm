@@ -1,0 +1,3 @@
+## Embeds Macro file
+#macro( embed $place )
+#end
