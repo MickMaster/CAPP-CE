@@ -9,7 +9,7 @@ Begin Window CappMainWindow
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   400
+   Height          =   352
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
@@ -25,7 +25,7 @@ Begin Window CappMainWindow
    Resizeable      =   True
    Title           =   "CAPP"
    Visible         =   True
-   Width           =   600
+   Width           =   564
    Begin CappToolbar CappCappToolbar
       Enabled         =   True
       Index           =   -2147483648
@@ -54,7 +54,7 @@ Begin Window CappMainWindow
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   351
+      Left            =   315
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False
@@ -89,7 +89,7 @@ Begin Window CappMainWindow
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   466
+      Left            =   430
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   False
@@ -101,13 +101,13 @@ Begin Window CappMainWindow
       TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "CAPP.SYSTEMS"
+      Text            =   "CAPP.systems"
       TextAlign       =   2
       TextColor       =   &c0000FE00
       TextFont        =   "System"
       TextSize        =   15.0
       TextUnit        =   0
-      Top             =   360
+      Top             =   312
       Transparent     =   False
       Underline       =   True
       Visible         =   True
