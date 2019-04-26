@@ -45,6 +45,7 @@
 #if ( $field.databaseType != "BLOB" )
 #if ( $field.databaseType != "ENUM" )
 #if ( $field.databaseType != "SET" )
+#if ( $field.databaseType != "GEOMETRY" )
                 '
                 ' Flags for field "${fieldname}"
                 ' --------------------------------------------
@@ -178,6 +179,7 @@
                 ${fieldname}CheckBox.Value = d_${fieldname}.Value
 #end
 ## end for skip var (!)
+#end
 #end
 #end
 #end
